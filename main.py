@@ -1,10 +1,12 @@
-#COMP 340 HW5
+#COMP 340 HW6
 #Josh Sproul
 
 import lexer
+import parserr
 
-srcCode = "((12+3*5)+5/4)"
-tokSeq = lexer.lexer.tokenize(srcCode)
+srcCode = "1 + 310 * 5"
+tokSeq = lexer.tokenize(srcCode)
+rootNode = parserr.parse(tokSeq)
+parserr.printTree((rootNode))
+print()
 
-for i in tokSeq:
-    print(i.type, i.value)
